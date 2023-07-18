@@ -1,3 +1,15 @@
+# Audio
+$(call inherit-product, vendor/lineage/config/audio.mk)
+
+# Fonts
+$(call inherit-product, vendor/lineage/config/fonts.mk)
+
+# Themed icons
+$(call inherit-product, packages/overlays/ThemeIcons/config.mk)
+
+# Pixel Framework
+$(call inherit-product, vendor/pixel-framework/config.mk)
+
 # Additional props
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
@@ -38,3 +50,14 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Enable dex2oat64 to do dexopt
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     dalvik.vm.dex2oat64.enabled=true
+
+# Pixel customization
+TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_QUICK_TAP ?= true
+TARGET_SUPPORTS_CALL_RECORDING ?= true
+
+# GApps
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/googleapps/googleapps.mk)
