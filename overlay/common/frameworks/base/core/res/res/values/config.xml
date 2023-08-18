@@ -34,27 +34,27 @@
          The chosen package for the specific location provider does not
          depend on the order of this list. -->
     <string-array name="config_locationProviderPackageNames" translatable="false">
-        <!-- The Google provider -->
-        <item>com.google.android.gms</item>
-        <!-- The standard AOSP fused location provider -->
-        <item>com.android.location.fused</item>
-        <!-- The MicroG Unified location provider -->
-        <item>org.microg.nlp</item>
+     <!-- The Google provider -->
+     <item>com.google.android.gms</item>
+     <!-- The standard AOSP fused location provider -->
+     <item>com.android.location.fused</item>
+     <!-- The MicroG Unified location provider -->
+     <item>org.microg.nlp</item>
     </string-array>
 
     <string-array name="config_locationExtraPackageNames" translatable="false">
-        <!-- Bluetooth -->
-        <item>com.android.bluetooth</item>
-        <!-- TeleService -->
-        <item>com.android.phone</item>
-        <!-- CneApp -->
-        <item>com.qualcomm.qti.cne</item>
-        <!-- ImsService -->
-        <item>com.shannon.imsservice</item>
-        <!-- MediaTek ImsService -->
-        <item>com.mediatek.ims</item>
-        <!-- Tethering -->
-        <item>com.android.networkstack.tethering</item>
+     <!-- Bluetooth -->
+     <item>com.android.bluetooth</item>
+     <!-- TeleService -->
+     <item>com.android.phone</item>
+     <!-- CneApp -->
+     <item>com.qualcomm.qti.cne</item>
+     <!-- ImsService -->
+     <item>com.shannon.imsservice</item>
+     <!-- MediaTek ImsService -->
+     <item>com.mediatek.ims</item>
+     <!-- Tethering -->
+     <item>com.android.networkstack.tethering</item>
     </string-array>
 
     <!-- Enable lockscreen rotation by default -->
@@ -96,30 +96,27 @@
     <!-- List of packages that can use the Conversation space for their category messages
     notifications until they target R -->
     <string-array name="config_notificationMsgPkgsAllowedAsConvos" translatable="false">
-        <item>com.facebook.orca</item>
-        <item>com.instagram.android</item>
-        <item>com.whatsapp</item>
-        <item>com.snapchat.android</item>
-        <item>jp.naver.line.android</item>
-        <item>com.kakao.talk</item>
-        <item>com.discord</item>
-        <item>org.thoughtcrime.securesms</item>
-        <item>com.groupme.android</item>
-        <item>org.telegram.messenger</item>
-        <item>com.twitter.android</item>
-        <item>com.viber.voip</item>
-        <item>com.linkedin.android</item>
-        <item>com.tencent.mm</item>
-        <item>nekox.messenger</item>
-        <item>org.telegram.plus</item>
-        <item>org.thunderdog.challegram</item>
-        <item>im.vector.app</item>
-        <item>cx.ring</item>
-        <item>org.briarproject.briar.android</item>
+     <item>com.facebook.orca</item>
+     <item>com.instagram.android</item>
+     <item>com.whatsapp</item>
+     <item>com.snapchat.android</item>
+     <item>jp.naver.line.android</item>
+     <item>com.kakao.talk</item>
+     <item>com.discord</item>
+     <item>org.thoughtcrime.securesms</item>
+     <item>com.groupme.android</item>
+     <item>org.telegram.messenger</item>
+     <item>com.twitter.android</item>
+     <item>com.viber.voip</item>
+     <item>com.linkedin.android</item>
+     <item>com.tencent.mm</item>
+     <item>nekox.messenger</item>
+     <item>org.telegram.plus</item>
+     <item>org.thunderdog.challegram</item>
+     <item>im.vector.app</item>
+     <item>cx.ring</item>
+     <item>org.briarproject.briar.android</item>
     </string-array>
-
-    <!-- Flag indicating which package name can access DeviceConfig table -->
-    <string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string>
 
     <!-- Control the behavior when the user long presses the power button.
             0 - Nothing
@@ -168,5 +165,42 @@
          value is left empty.  When this is non-empty then config_rawContactsLocalAccountName
          should also be non-empty.-->
     <string name="config_rawContactsLocalAccountType" translatable="false">com.android.contacts</string>
+
+    <!-- Define device configs on boot -->
+    <string-array name="global_device_configs_override">
+
+     <!-- Machine learning back gesture (requires TensorFlow model) -->
+     <item>systemui/use_back_gesture_ml_model=true</item>
+     <item>systemui/back_gesture_ml_model_name=backgesture</item>
+     <item>systemui/back_gesture_ml_model_threshold=0.8</item>
+
+     <!-- Don't pin camera app to save memory -->
+     <item>runtime_native_boot/pin_camera=false</item>
+
+     <!-- Keep up to 7 days of permission usage history -->
+     <item>privacy/discrete_history_cutoff_millis=604800000</item>
+     <item>privacy/privacy_dashboard_7_day_toggle=true</item>
+
+     <!-- Enable protected by android banner -->
+     <item>privacy/safety_protection_enabled=true</item>
+
+     <!-- Globally enable the new photo picker -->
+     <item>storage_native_boot/take_over_get_content=true</item>
+
+     <!-- Pixel Launcher -->
+     <item>launcher/ENABLE_SMARTSPACE_ENHANCED=true</item>
+
+     <!-- System Ui -->
+     <item>systemui/clipboard_overlay_show_actions=true</item>
+     <item>systemui/quick_access_wallet_enabled=true</item>
+     <item>systemui/enable_screenshot_corner_flow=true</item>
+     <item>systemui/enable_screenshot_notification_smart_actions=true</item>
+     <item>systemui/enable_screenshot_scrolling=true</item>
+     <item>systemui/volume_separate_notification=true</item>
+
+     <!-- Notifications -->
+     <item>notification_assistant/generate_actions=true</item>
+     <item>notification_assistant/generate_replies=true</item>
+    </string-array>
 
 </resources>
